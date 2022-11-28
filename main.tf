@@ -5,7 +5,7 @@ resource "random_password" "password" {
 }
 
 resource "aws_secretsmanager_secret" "secretmasterDB" {
-    name = "Secret_DB_2"
+    name = "Secret_DB_4"
 }
 
 resource "aws_secretsmanager_secret_rotation" "Secret_DB_Rotation" {

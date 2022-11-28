@@ -31,12 +31,10 @@ resource "aws_iam_policy" "policy_for_lambda_2" {
     {
       account_num          = data.aws_caller_identity.current.account_id
       aws_region           = data.aws_region.current.name
-      secret_name          = aws_secretsmanager_secret.secretmasterDB.name
+      secret_arn          = aws_secretsmanager_secret.secretmasterDB.arn
     }
   )
 }
-
-
 
 resource "aws_iam_role_policy_attachment" "policy_attachment_for_lambda_1" {
   depends_on = [
