@@ -8,7 +8,3 @@ variable "aws_profile" {
   description = "AWS profile to use"
 }
   
-# variable "account_no" {
-#   type        = string
-#   description = "AWS account number"
-# }
