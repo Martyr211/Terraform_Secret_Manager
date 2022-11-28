@@ -1,0 +1,25 @@
+{
+  "Id": "default",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["lambda:InvokeFunction"],
+      "Resource": [
+        "arn:aws:lambda:${aws_region}:${account_num}:function:${lambda_func}"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:${aws_region}:${account_num}:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": [
+        "arn:aws:logs:${aws_region}:${account_num}:log-group:/aws/lambda/${lambda_func}:*"
+      ]
+    }
+  ]
+}

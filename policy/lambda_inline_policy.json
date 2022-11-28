@@ -1,0 +1,36 @@
+{
+  "Id": "default",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetRandomPassword",
+        "secretsmanager:ListSecrets",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:CancelRotateSecret",
+        "secretsmanager:ListSecretVersionIds",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:GetResourcePolicy",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:StopReplicationToReplica",
+        "secretsmanager:ReplicateSecretToRegions",
+        "secretsmanager:RestoreSecret",
+        "secretsmanager:RotateSecret",
+        "secretsmanager:UpdateSecretVersionStage",
+        "secretsmanager:RemoveRegionsFromReplication"
+      ],
+      "Resource": "arn:aws:secretsmanager:${aws_region}:${account_num}:secret:${secret_name}"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": "secretsmanager:*",
+      "Resource": "arn:aws:secretsmanager:${aws_region}:${account_num}:secret:${secret_name}"
+    }
+  ]
+}
